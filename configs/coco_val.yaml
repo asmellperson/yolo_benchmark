@@ -1,0 +1,32 @@
+model:
+  # Ultralytics 官方公开 COCO 预训练权重；文件不存在时由 Ultralytics 自动下载。
+  weights: yolo11n.pt
+  onnx: artifacts/yolo11n_b1_640.onnx
+  engine: artifacts/yolo11n_b1_640_fp16.engine
+
+input:
+  size: [640, 640]
+  batch_size: 1
+
+dataset:
+  images: data/coco/val2017
+  annotations: data/coco/annotations/instances_val2017.json
+  # null 表示完整 5000 张；调试时可改为较小整数。
+  limit: null
+
+postprocess:
+  confidence: 0.001
+  iou: 0.7
+  max_detections: 300
+
+benchmark:
+  warmup_iterations: 20
+  rounds: 3
+  iterations_per_round: 200
+  seed: 2026
+
+runtime:
+  device_id: 0
+  trt_workspace_gib: 4
+  output_dir: outputs
+

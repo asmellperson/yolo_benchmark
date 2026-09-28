@@ -1,0 +1,13 @@
+# 请先按 README 安装与本机 CUDA 匹配的 torch 和 torchvision。
+ultralytics>=8.3
+onnx>=1.17
+# 1.21-1.26 的官方 PyPI GPU wheel 使用 CUDA 12.x/cuDNN 9。
+onnxruntime-gpu>=1.21,<1.27
+numpy>=1.26
+opencv-python>=4.10
+PyYAML>=6.0
+pandas>=2.2
+matplotlib>=3.9
+pycocotools>=2.0.8
+nvidia-ml-py>=12.560
+tqdm>=4.66

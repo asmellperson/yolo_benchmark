@@ -1,0 +1,21 @@
+# Python 环境与缓存
+.venv/
+__pycache__/
+*.pyc
+*.egg-info/
+.pytest_cache/
+
+# 模型、数据及运行产物
+data/
+artifacts/
+outputs/
+*.pt
+*.onnx
+*.engine
+
+# 本机配置
+.env
+.env.*
+!.env.example
+.idea/
+.vscode/
